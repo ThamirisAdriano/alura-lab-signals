@@ -25,7 +25,10 @@ export class ElementoService {
  constructor() {
    effect(() => {
      const elemento = this.elementoSelecionado();
-     if (elemento) {
+     if (!elemento) {
+      return;
+      }
+      {
        console.log(`Elemento selecionado: ${elemento.nome} (${elemento.simbolo})`);
      }
    });
@@ -33,10 +36,22 @@ export class ElementoService {
 
 
  selecionarElemento(elemento: Elemento) {
-   this.elementoSelecionado.set(elemento);
- }
+  if (this.elementoSelecionado() !== elemento) {
+    this.elementoSelecionado.set(elemento);
+  }
+}
+
 
  obterElementoSelecionado() {
    return this.elementoSelecionado();
  }
+
+ limparLog() {
+  if (this.elementoSelecionado()) {
+    this.elementoSelecionado.set(null);
+    console.clear();
+    console.log('Log apagado manualmente.');
+  }
+}
+
 }

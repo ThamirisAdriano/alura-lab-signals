@@ -16,6 +16,11 @@ export class EffectsDemoComponent {
  selecionarElemento(elemento: any) {
    this.elementoService.selecionarElemento(elemento);
  }
+
+ limparLog() {
+  this.elementoService.limparLog();
+}
+
 }
 
  

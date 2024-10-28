@@ -1,11 +1,18 @@
-<h2>Efeitos com Serviço</h2>
-<ul>
- <li *ngFor="let elemento of elementoService.elementos" (click)="selecionarElemento(elemento)">
-   {{ elemento.nome }} ({{ elemento.simbolo }})
- </li>
-</ul>
+<h2>Efeitos com Controle de Limpeza</h2>
+<div class="container">
+ <div class="central-container">
+   <ul>
+     <li *ngFor="let elemento of elementoService.elementos" (click)="elementoService.selecionarElemento(elemento)">
+       {{ elemento.nome }} ({{ elemento.simbolo }})
+     </li>
+   </ul>
+    <button (click)="limparLog()" class="button">
+     Resetar seleção
+     <span class="icon"></span>
+   </button>
+ </div>
+ <p *ngIf="elementoService.obterElementoSelecionado()">
+   Elemento Selecionado: {{ elementoService.obterElementoSelecionado()?.nome || 'Nenhum' }}
+ </p>
+</div>
 
-
-<p *ngIf="elementoService.obterElementoSelecionado()">
- Elemento Selecionado: {{ elementoService.obterElementoSelecionado()?.nome || 'Nenhum' }}
-</p>
