@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let elemento of elementos" (click)="selecionarElemento(elemento)">
+      {{ elemento.nome }} ({{ elemento.simbolo }})
+    </li>
+  </ul>
+  
+  <p *ngIf="(elementoSelecionado$ | async) as elementoSelecionado">
+    Observable - Elemento Selecionado: {{ elementoSelecionado.nome }}
+  </p>
+  
+  <p>Observable - Informações Detalhadas: {{ elementoInfo$ | async }}</p>
+  
