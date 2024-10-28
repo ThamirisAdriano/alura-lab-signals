@@ -1,11 +1,11 @@
+<h2>Efeitos com Serviço</h2>
+<ul>
+ <li *ngFor="let elemento of elementoService.elementos" (click)="selecionarElemento(elemento)">
+   {{ elemento.nome }} ({{ elemento.simbolo }})
+ </li>
+</ul>
 
-  <h2>Efeitos Reativos</h2>
-  <ul>
-    <li *ngFor="let elemento of elementos" (click)="selecionarElemento(elemento)">
-      {{ elemento.nome }} ({{ elemento.simbolo }})
-    </li>
-  </ul>
-  
-  <p [class.highlight]="elementoSelecionado()">
-    Elemento Selecionado: {{ elementoSelecionado()?.nome || 'Nenhum' }} Gerando Log
-  </p>
+
+<p *ngIf="elementoService.obterElementoSelecionado()">
+ Elemento Selecionado: {{ elementoService.obterElementoSelecionado()?.nome || 'Nenhum' }}
+</p>

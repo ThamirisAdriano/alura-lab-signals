@@ -1,10 +1,5 @@
-import { Component, signal, computed } from '@angular/core';
-
-interface Elemento{
-  nome: string;
-  simbolo: string;
-  numeroAtomico: number;
-}
+import { Component, computed } from '@angular/core';
+import { ElementoService } from './../elemento.service';
 
 @Component({
   selector: 'app-signals-intro',
@@ -13,25 +8,12 @@ interface Elemento{
 })
 export class SignalsIntroComponent {
 
-  elementoSelecionado = signal<Elemento | null>(null);
-
-  elementos: Elemento[] = [
-    { nome: 'Hidrogênio', simbolo: 'H', numeroAtomico: 1 },
-    { nome: 'Oxigênio', simbolo: 'O', numeroAtomico: 8 },
-    { nome: 'Sódio', simbolo: 'Na', numeroAtomico: 11 },
-    { nome: 'Cloro', simbolo: 'Cl', numeroAtomico: 17 }
-  ];
-
-  selecionarElemento(elemento: Elemento){
-    this.elementoSelecionado.set(elemento)
-  }
+  constructor(public elementoService: ElementoService) {}
 
   elementoInfo = computed(() => {
-    const elemento = this.elementoSelecionado();
+    const elemento = this.elementoService.obterElementoSelecionado();
     return elemento
       ? `Nome: ${elemento.nome} (${elemento.simbolo}), Número Atômico: ${elemento.numeroAtomico}`
       : 'Nenhum elemento selecionado';
   });
-  
-  
 }
