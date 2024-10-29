@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, untracked } from '@angular/core';
 import { signal, computed, effect } from '@angular/core';
 
 export interface Elemento {
@@ -19,8 +19,10 @@ export class ElementoService {
   massaAtomicaTotal = computed(() => {
     const elemento1 = this.elementoSelecionado1();
     const elemento2 = this.elementoSelecionado2();
-    const massa1 = elemento1 ? elemento1.numeroAtomico + elemento1.numeroNeutrons : 0;
-    const massa2 = elemento2 ? elemento2.numeroAtomico + elemento2.numeroNeutrons : 0;
+
+   const massa1 = untracked(() => elemento1 ? elemento1.numeroAtomico + elemento1.numeroNeutrons : 0);
+   const massa2 = untracked(() => elemento2 ? elemento2.numeroAtomico + elemento2.numeroNeutrons : 0);
+   
     return massa1 + massa2;
   });
 
