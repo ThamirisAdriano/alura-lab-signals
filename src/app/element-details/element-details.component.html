@@ -1,0 +1,7 @@
+<h2>Selected Element Details</h2>
+<p *ngIf="elementoService.obterElementoSelecionado()">
+ Name: {{ elementoService.obterElementoSelecionado()?.nome }} <br>
+ Symbol: {{ elementoService.obterElementoSelecionado()?.simbolo }} <br>
+ Atomic Number: {{ elementoService.obterElementoSelecionado()?.numeroAtomico }}
+</p>
+<p *ngIf="!elementoService.obterElementoSelecionado()">No element selected</p>

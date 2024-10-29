@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { signal, effect } from '@angular/core';
 
 
-interface Elemento {
+export interface Elemento {
  nome: string;
  simbolo: string;
  numeroAtomico: number;
