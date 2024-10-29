@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Tabela periódica interativa</h2>
+
+  <div class="container-massa">
+    <h3>Selecione o primeiro elemento:</h3>
+    <ul class="element-list">
+      <li
+        *ngFor="let elemento of elementos"
+        (click)="selecionarElemento1(elemento)"
+      >
+        {{ elemento.nome }} ({{ elemento.simbolo }})
+      </li>
+    </ul>
+
+    <h3>Selecione o segundo elemento:</h3>
+    <ul class="element-list">
+      <li
+        *ngFor="let elemento of elementos"
+        (click)="selecionarElemento2(elemento)"
+      >
+        {{ elemento.nome }} ({{ elemento.simbolo }})
+      </li>
+    </ul>
+
+    <button class="button" (click)="elementoService.limparLog()">
+      Resetar seleção
+      <span class="icon"></span>
+    </button>
+</div>
+    <h2>Cálculo de massa atômica</h2>
+
+    <div class="container-calculo">
+      <div class="center-container">
+        <p>
+          <strong>Elemento 1 selecionado:</strong>
+          {{ elementoSelecionado1()?.nome || "Nenhum" }}
+        </p>
+        <span class="plus-sign">+</span>
+        <p>
+          <strong>Elemento 2 selecionado:</strong>
+          {{ elementoSelecionado2()?.nome || "Nenhum" }}
+        </p>
+      </div>
+
+      <div class="center-container-result">
+        <h3>Massa atômica total:</h3>
+        <p class="massa-total">{{ massaAtomicaTotal() }}</p>
+      </div>
+    </div>
+  </div>
+

@@ -9,6 +9,7 @@ import { EffectsDemoComponent } from './effects-demo/effects-demo.component';
 import { ElementListComponent } from './element-list/element-list.component';
 import { ElementDetailsComponent } from './element-details/element-details.component';
 import { OptimizedComponent } from './optimized/optimized.component';
+import { ComputedSignalComponent } from './computed-signal/computed-signal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OptimizedComponent } from './optimized/optimized.component';
     EffectsDemoComponent,
     ElementListComponent,
     ElementDetailsComponent,
-    OptimizedComponent
+    OptimizedComponent,
+    ComputedSignalComponent
   ],
   imports: [
     BrowserModule,
