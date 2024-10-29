@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Elementos Químicos</h2>
+   <ul>
+    <li *ngFor="let elemento of elementoService.elementos" (click)="selecionarElemento(elemento)">
+      {{ elemento.nome }} ({{ elemento.simbolo }})
+    </li>
+   </ul>
+   
+   
+   <div class="central-container">
+    <h3>Detalhes do Elemento:</h3>
+   <p *ngIf="elementoService.obterElementoSelecionado() as elementoSelecionado">
+    Nome: {{ elementoSelecionado.nome }} <br>
+    Símbolo: {{ elementoSelecionado.simbolo }} <br>
+    Número Atômico: {{ elementoSelecionado.numeroAtomico }}
+   </p>
+   <p *ngIf="!elementoService.obterElementoSelecionado()">Nenhum elemento selecionado</p>
+   </div>
+   </div>

@@ -8,6 +8,7 @@ import { ObservablesComponent } from './observables/observables.component';
 import { EffectsDemoComponent } from './effects-demo/effects-demo.component';
 import { ElementListComponent } from './element-list/element-list.component';
 import { ElementDetailsComponent } from './element-details/element-details.component';
+import { OptimizedComponent } from './optimized/optimized.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ElementDetailsComponent } from './element-details/element-details.compo
     ObservablesComponent,
     EffectsDemoComponent,
     ElementListComponent,
-    ElementDetailsComponent
+    ElementDetailsComponent,
+    OptimizedComponent
   ],
   imports: [
     BrowserModule,
