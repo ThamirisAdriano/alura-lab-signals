@@ -27,12 +27,6 @@
     />
   </div>
 
-  <div class="element-container">
-    <router-outlet name="list"></router-outlet> 
-    <router-outlet name="details"></router-outlet> 
-  </div>
-</nav>
-
 <div>
   <img
     src="./../../assets/Banner.png"
@@ -40,5 +34,11 @@
     class="image-container"
   />
 </div>
+
+<div class="element-container">
+  <router-outlet name="list"></router-outlet> 
+  <router-outlet name="details"></router-outlet> 
+</div>
+</nav>
 
 <router-outlet></router-outlet>
