@@ -7,6 +7,8 @@ import { ElementListComponent } from './element-list/element-list.component';
 import { ElementDetailsComponent } from './element-details/element-details.component';
 import { OptimizedComponent } from './optimized/optimized.component';
 import { ComputedSignalComponent } from './computed-signal/computed-signal.component';
+import { ClickCounterComponent } from './click-counter/click-counter.component';
+import { ItemCounterComponent } from './item-counter/item-counter.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'effects-demo', component: EffectsDemoComponent },
   { path: 'optimized', component: OptimizedComponent },
   { path: 'computed-signal', component: ComputedSignalComponent }, 
+  { path: 'click-counter', component: ClickCounterComponent }, 
+  { path: 'item-counter', component: ItemCounterComponent }, 
   {
     path: 'elements', 
     children: [

@@ -10,6 +10,8 @@ import { ElementListComponent } from './element-list/element-list.component';
 import { ElementDetailsComponent } from './element-details/element-details.component';
 import { OptimizedComponent } from './optimized/optimized.component';
 import { ComputedSignalComponent } from './computed-signal/computed-signal.component';
+import { ClickCounterComponent } from './click-counter/click-counter.component';
+import { ItemCounterComponent } from './item-counter/item-counter.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ComputedSignalComponent } from './computed-signal/computed-signal.compo
     ElementListComponent,
     ElementDetailsComponent,
     OptimizedComponent,
-    ComputedSignalComponent
+    ComputedSignalComponent,
+    ClickCounterComponent,
+    ItemCounterComponent,
   ],
   imports: [
     BrowserModule,
