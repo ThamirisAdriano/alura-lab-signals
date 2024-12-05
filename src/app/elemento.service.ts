@@ -7,7 +7,6 @@ export interface Elemento {
   numeroAtomico: number;
   numeroNeutrons: number;
 }
-
 @Injectable({
   providedIn: 'root'
 })
